@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.userDao">
+    <select id="select" parameterType="int" resultType="String">
+        select username
+        from usert
+        where id=#{id}
+    </select>
+    <insert id="add" parameterType="com.modal.User">
+        insert into usert(username,password)
+        values (#{username,jdbcType=INTEGER} ,#{password,jdbcType=VARCHAR})
+
+    </insert>
+    <delete id="delete" parameterType="java.lang.Integer">
+    delete from usert
+    where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <update id="change" parameterType="com.modal.User">
+        update usert
+        set username=#{username,jdbcType=VARCHAR},
+        password=#{password,jdbcType=VARCHAR}
+        where id=#{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectAll" resultType="com.modal.User">
+        select *
+        from usert
+
+    </select>
+</mapper>
