@@ -1,5 +1,5 @@
 package com.service;
-import com.dao.userDao;
+import com.dao.UserDao;
 import com.modal.User;
 import org.springframework.stereotype.Service;
 
@@ -7,30 +7,28 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class userService {
+public class UserService {
     @Resource
-    userDao ud;
+    UserDao userdao;
     public void add(User user) {
-        ud.add(user);
+        userdao.add(user);
     }
 
     public void delete(int id) {
-        ud.delete(id);
+        userdao.delete(id);
     }
 
     public void change(User user) {
-
-        ud.change(user);
+        userdao.change(user);
     }
 
     public String select(int id) {
-        String user=ud.select(id);
-        System.out.println("user="+user);
+        String user=userdao.select(id);
         return user;
     }
 
     public List<User> selectAll() {
-        List<User> userList=ud.selectAll();
+        List<User> userList=userdao.selectAll();
         return userList;
     }
 }

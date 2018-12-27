@@ -1,13 +1,13 @@
 package com.dao;
 
 import com.modal.User;
-import com.modal.usert;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface userDao {
+public interface UserDao {
 
 
     public void delete(int i);
